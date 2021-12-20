@@ -24,10 +24,10 @@ jobs:
     needs: build
     if: ${{ github.ref != 'refs/heads/main' }}
       steps:
-        - uses: actions/checkout@v2
-        - name: Create pull request
-          uses: repo-sync/pull-request@v2
-          with:
-            destination_branch: "main"
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            pr_title: "Awesome PR by ${{ github.actor }}"
+      - uses: actions/checkout@v2
+      - name: Create pull request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Awesome PR by ${{ github.actor }}"
